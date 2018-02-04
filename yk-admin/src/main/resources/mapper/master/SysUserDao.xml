@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yk.modules.sys.dao.master.SysUserDao">
+	<resultMap id="userAll" type="com.yk.modules.sys.entity.SysUserEntity">
+		<result column="user_id" property="userId"></result>
+		<result column="username" property="username"></result>
+		<result column="password" property="password"></result>
+		<result column="salt" property="salt"></result>
+		<result column="email" property="email"></result>
+		<result column="mobile" property="mobile"></result>
+		<result column="status" property="status"></result>
+		<result column="dept_id" property="deptId"></result>
+		<result column="create_time" property="createTime"></result>
+	</resultMap>
+
+	<!-- 查询用户的所有权限 -->
+	<select id="queryAllPerms" resultType="string">
+		select m.perms from sys_user_role ur 
+			LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id 
+			LEFT JOIN sys_menu m on rm.menu_id = m.menu_id 
+		where ur.user_id = #{userId}
+	</select>
+	<select id="selectUser" resultMap="userAll" parameterType="com.yk.modules.sys.entity.SysUserEntity">
+		select user_id,username,password,salt,email,mobile,status,dept_id,create_time
+		from sys_user
+		where username = #{username}
+	</select>
+	
+	<!-- 查询用户的所有菜单ID --> 
+	<select id="queryAllMenuId" resultType="long">
+		select distinct rm.menu_id from sys_user_role ur 
+			LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id 
+		where ur.user_id = #{userId}
+	</select>
+	
+	<delete id="deleteBatch">
+		delete from sys_user where user_id in 
+		<foreach item="userId" collection="array" open="(" separator="," close=")">
+			#{userId}
+		</foreach>
+		;
+		delete from sys_user_role where user_id in 
+		<foreach item="userId" collection="array" open="(" separator="," close=")">
+			#{userId}
+		</foreach>
+	</delete>
+
+</mapper>
