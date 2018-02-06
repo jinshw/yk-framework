@@ -24,6 +24,8 @@ import com.yk.modules.sys.service.SysUserService;
 import com.yk.modules.sys.shiro.ShiroUtils;
 import com.yk.utils.PageUtils;
 import com.yk.utils.R;
+import com.yk.validator.ValidatorUtils;
+import com.yk.validator.group.AddGroup;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,7 +113,7 @@ public class SysUserController extends AbstractController {
 	@RequestMapping("/save")
 	@RequiresPermissions("sys:user:save")
 	public R save(@RequestBody SysUserEntity user){
-//		ValidatorUtils.validateEntity(user, AddGroup.class);
+		ValidatorUtils.validateEntity(user, AddGroup.class);
 		
 		sysUserService.save(user);
 		

@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-//@MapperScan("com.yk.modules.*.dao.*") //单数据库连接这样配置
+@MapperScan("com.yk.modules.*.dao.*") //扫描dao层文件
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

@@ -39,6 +39,14 @@ public class SysPageController {
 	public String index(){
 		return "index";
 	}
+	@RequestMapping("index_renren.html")
+	public String indexrenrne(){
+		return "index_renrne";
+	}
+	@RequestMapping(value = {"/index2.html", "index2.html"})
+	public String index2(){
+		return "index2";
+	}
 
 	@RequestMapping("index1.html")
 	public String index1(){

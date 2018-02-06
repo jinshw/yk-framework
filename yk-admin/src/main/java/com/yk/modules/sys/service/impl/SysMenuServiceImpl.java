@@ -90,7 +90,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
         for (SysMenuEntity entity : menuList) {
             //目录
             if (entity.getType() == Constant.MenuType.CATALOG.getValue()) {
-                entity.setList(getMenuTreeList(queryListParentId(entity.getMenuId(), menuIdList), menuIdList));
+                entity.setChildren(getMenuTreeList(queryListParentId(entity.getMenuId(), menuIdList), menuIdList));
             }
             subMenuList.add(entity);
         }

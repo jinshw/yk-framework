@@ -89,7 +89,7 @@ public class SysMenuEntity implements Serializable {
 	private Boolean open;
 
 	@TableField(exist=false)
-	private List<?> list;
+	private List<?> children;
 
 	public void setMenuId(Long menuId) {
 		this.menuId = menuId;
@@ -195,12 +195,12 @@ public class SysMenuEntity implements Serializable {
 		return orderNum;
 	}
 
-	public List<?> getList() {
-		return list;
+	public List<?> getChildren() {
+		return children;
 	}
 
-	public void setList(List<?> list) {
-		this.list = list;
+	public void setChildren(List<?> list) {
+		this.children = list;
 	}
 
 	public String getParentName() {

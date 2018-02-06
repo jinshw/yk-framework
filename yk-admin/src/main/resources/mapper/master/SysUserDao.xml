@@ -26,7 +26,7 @@
 		from sys_user
 		where username = #{username}
 	</select>
-	
+
 	<!-- 查询用户的所有菜单ID --> 
 	<select id="queryAllMenuId" resultType="long">
 		select distinct rm.menu_id from sys_user_role ur 
