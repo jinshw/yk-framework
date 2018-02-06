@@ -24,3 +24,7 @@
 * yk-admin访问路径：http://localhost:9090/ykadmin
 * swagger文档路径：http://localhost:9090/ykadmin/swagger/index.html
 * 账号密码：admin/admin
+* 开发工具idea（推荐）
+
+# 版本开发
+* 当前版本V0.0.1：实现了spring boot、mybatis、mybatis plus、MySQL、layui
