@@ -1,4 +1,3 @@
-
 package com.yk.modules.sys.entity;
 
 import com.baomidou.mybatisplus.annotations.TableId;

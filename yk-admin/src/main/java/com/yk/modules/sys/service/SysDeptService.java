@@ -1,6 +1,4 @@
-
 package com.yk.modules.sys.service;
-
 
 import com.baomidou.mybatisplus.service.IService;
 import com.yk.modules.sys.entity.SysDeptEntity;
