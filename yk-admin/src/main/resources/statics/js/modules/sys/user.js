@@ -69,7 +69,8 @@ var vm = new Vue({
             status:1,
             deptId:null,
             deptName:null,
-            roleIdList:[]
+            roleIdList:[],
+            password:""
         }
     },
     methods: {

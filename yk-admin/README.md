@@ -104,3 +104,6 @@ public class DemoApplication extends SpringBootServletInitializer {
 </plugin>
 ~~~
 
+### 解决问题
+* 在idea中freemarker 页面修改不刷新
+    解决方法：http://blog.csdn.net/M201672389/article/details/77994570

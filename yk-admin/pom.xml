@@ -40,6 +40,12 @@
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
 
         <!--支持使用 JDBC 访问数据库-->
         <dependency>
@@ -139,6 +145,7 @@
                 <version>${spring.boot.version}</version>
                 <configuration>
                     <mainClass>com.yk.Application</mainClass>
+                    <fork>true</fork>
                 </configuration>
                 <executions>
                     <execution>

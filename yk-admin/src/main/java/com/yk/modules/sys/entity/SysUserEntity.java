@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 //import io.renren.common.validator.group.AddGroup;
 //import io.renren.common.validator.group.UpdateGroup;
+import com.yk.validator.group.AddGroup;
+import com.yk.validator.group.UpdateGroup;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -35,13 +37,13 @@ public class SysUserEntity implements Serializable {
 	/**
 	 * 用户名
 	 */
-//	@NotBlank(message="用户名不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	@NotBlank(message="用户名不能为空", groups = {AddGroup.class, UpdateGroup.class})
 	private String username;
 
 	/**
 	 * 密码
 	 */
-//	@NotBlank(message="密码不能为空", groups = AddGroup.class)
+	@NotBlank(message="密码不能为空", groups = {AddGroup.class})
 	private String password;
 
 	/**
@@ -52,8 +54,8 @@ public class SysUserEntity implements Serializable {
 	/**
 	 * 邮箱
 	 */
-//	@NotBlank(message="邮箱不能为空", groups = {AddGroup.class, UpdateGroup.class})
-//	@Email(message="邮箱格式不正确", groups = {AddGroup.class, UpdateGroup.class})
+	@NotBlank(message="邮箱不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	@Email(message="邮箱格式不正确", groups = {AddGroup.class, UpdateGroup.class})
 	private String email;
 
 	/**
@@ -80,7 +82,7 @@ public class SysUserEntity implements Serializable {
 	/**
 	 * 部门ID
 	 */
-//	@NotNull(message="部门不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	@NotNull(message="部门不能为空", groups = {AddGroup.class, UpdateGroup.class})
 	private Long deptId;
 
 	/**
@@ -133,7 +135,7 @@ public class SysUserEntity implements Serializable {
 	 * 获取：密码
 	 * @return String
 	 */
-	@JsonIgnore
+//	@JsonIgnore
 	public String getPassword() {
 		return password;
 	}

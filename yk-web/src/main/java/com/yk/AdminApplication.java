@@ -8,7 +8,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 
 @SpringBootApplication
-@MapperScan(basePackages = {"io.renren.modules.*.dao"})
+@MapperScan(basePackages = {"com.yk.modules.*.dao"})
 public class AdminApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
